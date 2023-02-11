@@ -1,0 +1,30 @@
+name: febi
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.18.5 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.6.5
+  font_awesome_flutter: ^10.3.0
+  flutter: 
+    sdk: flutter
+  image: ^4.0.13
+  http: ^0.13.5
+  flutter_lorem: ^2.0.0
+dev_dependencies: 
+  flutter_lints: 2.0.1
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+  fonts:
+    - family: Open Sans
+      fonts:
+        - asset: assets/fonts/Open_Sans/static/OpenSans/OpenSans-Regular.ttf
+  assets:
+    - assets/image/g.png
+
