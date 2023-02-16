@@ -104,16 +104,17 @@ class PhotosList extends StatelessWidget {
                             children: [
                               Row(
                     children: [SizedBox(
-                      width: 330,
+                      width: MediaQuery.of(context).size.width*0.79,
                     ),
-                     IconButton(
-                    alignment: Alignment.topRight,
-                    color: Colors.grey,
-                    onPressed: () {Get.to(()=>HomeView());},
-                    icon: Icon(
-                      FontAwesomeIcons.ellipsis,
-                      size: 30,
-                    )),],
+                       IconButton(
+                                         alignment: Alignment.topRight,
+                                         color: Colors.grey,
+                                         onPressed: () {Get.to(()=>HomeView());},
+                                         icon: Icon(
+                        FontAwesomeIcons.ellipsis,
+                        size: 30,
+                                         )),
+                     ],
                   ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 30, right: 30, bottom: 30),

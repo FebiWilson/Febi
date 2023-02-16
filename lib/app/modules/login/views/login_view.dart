@@ -128,7 +128,7 @@ class LoginView extends GetView<LoginController> {
             // ),
             Container(
               padding: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.62,
+                top: MediaQuery.of(context).size.height * 0.25+260,
                 left: MediaQuery.of(context).size.width * 0.7,
               ),
               child: CircleAvatar(
@@ -156,7 +156,7 @@ class LoginView extends GetView<LoginController> {
                     textAlign: TextAlign.left,
                     style: TextStyle(
                         color: Colors.blue,
-                        fontSize: 25,
+                        fontSize: 20,
                         fontWeight: FontWeight.w700),
                   ),
                 ],
@@ -165,11 +165,11 @@ class LoginView extends GetView<LoginController> {
             Container(
               padding: EdgeInsets.only(
                 top: MediaQuery.of(context).size.height * 0.05,
-                left: MediaQuery.of(context).size.width * 0.2,
+                left: MediaQuery.of(context).size.width * 0.15,
               ),
               child: CircleAvatar(
                 radius: 60,
-                backgroundColor: Color.fromARGB(255, 3, 3, 119),
+                backgroundColor: Color.fromARGB(255, 58, 109, 250),
               ),
             ),
 
@@ -191,8 +191,8 @@ class LoginView extends GetView<LoginController> {
                   ),
                   Center(
                     child: SizedBox(
-                      height: 38,
-                      width: 200,
+                      height: 39,
+                      width: 210,
                       child: ElevatedButton.icon(
                         icon: Icon(FontAwesomeIcons.facebook),
                         label: Text('Login with Facebook'),
@@ -208,17 +208,20 @@ class LoginView extends GetView<LoginController> {
                   ),
                   Center(
                     child: SizedBox(
-                      height: 38,
-                      width: 200,
+                      height: 39,
+                      width: 210,
                       child: ElevatedButton.icon(
-                        icon: Transform.scale(
+                        /*icon: Transform.scale(
                           scale: 1,
-                          child: ImageIcon(
-                            AssetImage("assets/image/g.png"),
-                            size: 20,
+                          child: FittedBox(
+                            child: ImageIcon(
+                              AssetImage("assets/image/g.png"),
+                              size: 20,
+                            ),
                           ),
-                        ),
+                        ),*/
                         //icon: Icon(FontAwesomeIcons.googlePlusG),
+                        icon: new Image.asset("assets/image/g.png"),
                         label: Text('Sign in with Google'),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color.fromARGB(255, 107, 151, 246),
@@ -236,6 +239,7 @@ class LoginView extends GetView<LoginController> {
     );
   }
 }
+
 class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -243,6 +247,7 @@ class MyWidget extends StatelessWidget {
     return CustomPaint(painter: OpenPainter(appSize: deviceData.size));
   }
 }
+
 class OpenPainter extends CustomPainter {
   Size appSize;
   OpenPainter({required this.appSize});
@@ -252,8 +257,10 @@ class OpenPainter extends CustomPainter {
       ..color = Colors.blue
       ..style = PaintingStyle.fill;
     //canvas.drawCircle(Offset(200, 200), 100, paint1);
-    canvas.drawCircle(Offset(appSize.width, appSize.height*0.15), appSize.height*0.43, paint1);
-    canvas.drawCircle(Offset(0, appSize.height*1.2), appSize.width*0.6, paint1);
+    canvas.drawCircle(Offset(appSize.width*1.055, appSize.height * 0.15),
+        appSize.width * 0.8, paint1);
+    canvas.drawCircle(
+        Offset(0, appSize.height * 1.215), appSize.width * 0.6, paint1);
   }
 
   @override
