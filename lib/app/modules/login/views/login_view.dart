@@ -206,7 +206,7 @@ class LoginView extends GetView<LoginController> {
                   Center(
                     child: SizedBox(
                       height: 38,
-                      width: 190,
+                      width: 200,
                       child: ElevatedButton.icon(
                         icon: Transform.scale(
                           scale: 1,
