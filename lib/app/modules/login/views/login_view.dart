@@ -1,5 +1,7 @@
 //import 'dart:html';
 
+//import 'dart:html';
+
 import 'package:febi/app/modules/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -12,6 +14,7 @@ class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var deviceData = MediaQuery.of(context);
     return Container(
       decoration: BoxDecoration(),
       child: Scaffold(
@@ -22,7 +25,7 @@ class LoginView extends GetView<LoginController> {
               width: 400,
               height: 400,
               child: CustomPaint(
-                painter: OpenPainter(),
+                painter: OpenPainter(appSize: deviceData.size),
               ),
             ),
             SingleChildScrollView(
@@ -125,7 +128,7 @@ class LoginView extends GetView<LoginController> {
             // ),
             Container(
               padding: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.6,
+                top: MediaQuery.of(context).size.height * 0.62,
                 left: MediaQuery.of(context).size.width * 0.7,
               ),
               child: CircleAvatar(
@@ -172,7 +175,7 @@ class LoginView extends GetView<LoginController> {
 
             Container(
               padding: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.7,
+                top: MediaQuery.of(context).size.height * 0.75,
                 //left: MediaQuery.of(context).size.width * 0.3,
               ),
               child: Column(
@@ -213,7 +216,6 @@ class LoginView extends GetView<LoginController> {
                           child: ImageIcon(
                             AssetImage("assets/image/g.png"),
                             size: 20,
-                            
                           ),
                         ),
                         //icon: Icon(FontAwesomeIcons.googlePlusG),
@@ -234,16 +236,24 @@ class LoginView extends GetView<LoginController> {
     );
   }
 }
-
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var deviceData = MediaQuery.of(context);
+    return CustomPaint(painter: OpenPainter(appSize: deviceData.size));
+  }
+}
 class OpenPainter extends CustomPainter {
+  Size appSize;
+  OpenPainter({required this.appSize});
   @override
   void paint(Canvas canvas, Size size) {
     var paint1 = Paint()
       ..color = Colors.blue
       ..style = PaintingStyle.fill;
     //canvas.drawCircle(Offset(200, 200), 100, paint1);
-    canvas.drawCircle(Offset(400, 130), 280, paint1);
-    canvas.drawCircle(Offset(0, 820), 250, paint1);
+    canvas.drawCircle(Offset(appSize.width, appSize.height*0.15), appSize.height*0.43, paint1);
+    canvas.drawCircle(Offset(0, appSize.height*1.2), appSize.width*0.6, paint1);
   }
 
   @override
