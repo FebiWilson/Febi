@@ -128,7 +128,7 @@ class LoginView extends GetView<LoginController> {
             // ),
             Container(
               padding: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.25+260,
+                top: MediaQuery.of(context).size.height * 0.25 + 260,
                 left: MediaQuery.of(context).size.width * 0.7,
               ),
               child: CircleAvatar(
@@ -257,7 +257,7 @@ class OpenPainter extends CustomPainter {
       ..color = Colors.blue
       ..style = PaintingStyle.fill;
     //canvas.drawCircle(Offset(200, 200), 100, paint1);
-    canvas.drawCircle(Offset(appSize.width*1.055, appSize.height * 0.15),
+    canvas.drawCircle(Offset(appSize.width * 1.055, appSize.height * 0.15),
         appSize.width * 0.8, paint1);
     canvas.drawCircle(
         Offset(0, appSize.height * 1.215), appSize.width * 0.6, paint1);
